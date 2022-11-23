@@ -18,16 +18,13 @@ nums = [1, 2, 3, 3, 3, 6, 9];
 
 
 """
-l > r 
-m+1 > r 
-2(m+1) > 2r
-l + r + 2 > 2r
-l + 2 > r
-r > l > r - 2
-l = r - 1
+if l===r
+then l=mid+1 > r
 
 NOT FOUND --> l = m+1
 
+if l===r-1 -> mid = (l+r)//2 = r - 1
+then l=mid+1 === r
 """
 
 """
