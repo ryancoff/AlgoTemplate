@@ -18,7 +18,7 @@ nums = [1, 2, 3, 3, 3, 6, 9];
 
 
 """
-if l===r
+if l===r (Might not available while l < r)
 then l=mid+1 > r
 
 NOT FOUND --> l = m+1
