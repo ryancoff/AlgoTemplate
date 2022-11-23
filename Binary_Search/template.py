@@ -35,3 +35,10 @@ m > l <=> l < r
 m = l <=> l = r
 
 """
+
+"""
+Leetcode:
+
+Sqrt(x)
+Search Insert Position
+"""
