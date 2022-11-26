@@ -3,7 +3,7 @@
 class MyCalendar:
 
     def __init__(self):
-        self.calendar = [(0,0),(1e9,1e9)] # Reduce to only middle case
+        self.calendar = [(0,0),(1e9,1e9)] # Reduce to only middle case TH3
     def book(self, start: int, end: int) -> bool:
         l,r = 0,len(self.calendar)
         while l<r:
