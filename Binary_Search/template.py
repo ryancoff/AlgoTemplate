@@ -26,5 +26,5 @@ def binarySearch(nums: list[int], target: int) -> int:
       r = m # Target must be on the Left or equal to m ## r > m > l
   return l
 
-nums = [3,3,3,3]
-print(binarySearch(nums,3))
+nums = [47,50]
+print(binarySearch(nums,41))
