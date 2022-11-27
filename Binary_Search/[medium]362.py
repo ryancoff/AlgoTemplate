@@ -49,7 +49,27 @@ class HitCounter:
             else:
                 right = mid
         return left
-    
+# BN optimized version
+class HitCounter:
+    def __init__(self):
+        self.hits = []
+
+    def hit(self, timestamp: int) -> None:
+        self.hits.append(timestamp)
+
+    def getHits(self, timestamp: int) -> int:
+        left, right = 0, len(self.hits) - 1
+        target = timestamp - 300
+
+        while left <= right:
+            mid = (left + right) // 2
+
+            if self.hits[mid] <= target:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+        return len(self.hits) - left
                 
 # Queue
 class HitCounter:
@@ -66,7 +86,31 @@ class HitCounter:
             self.queue.popleft()
         return len(self.queue)
 
+# Other approach:
+class HitCounter:
 
+    # O(1) time and space..
+    def __init__(self):
+        # Create an array of 300 elements, where each element reps a timestamp and its count.
+        # Note the timestamp starts from 1 since that's the constraints
+        self.counts = [[i+1, 0] for i in range(300)]
+
+    def hit(self, timestamp: int) -> None:
+        
+        # Circular buffer logic here.. remember timestamp starts at 1 per constraints so 
+        # need to sub 1 to get 0th index.
+        index = (timestamp - 1) % 300
+        
+        # If current timestamp at index is = timestamp then just update count
+        # Else need to replace old TS with new one and set count to 1
+        if self.counts[index][0] == timestamp:
+            self.counts[index][1] += 1
+        else:
+            self.counts[index][0] = timestamp
+            self.counts[index][1] = 1
+
+    def getHits(self, timestamp: int) -> int:
+        return sum(tup[1] for tup in self.counts if 0 <= (timestamp - tup[0]) < 300)
 
 # Your HitCounter object will be instantiated and called as such:
 # obj = HitCounter()
