@@ -55,7 +55,7 @@ class HitCounter:
         self.hits = []
 
     def hit(self, timestamp: int) -> None:
-        self.hits.append(timestamp)
+        self.hits.append(timestamp) # stateless --> number of hits = number of timestamps
 
     def getHits(self, timestamp: int) -> int:
         left, right = 0, len(self.hits) - 1
