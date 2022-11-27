@@ -1,4 +1,4 @@
-# 528. Random Pick with Weight
+# 528. Random Pick with Weight (87.33%)
 import random
 
 class Solution:
