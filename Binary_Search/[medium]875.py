@@ -52,7 +52,7 @@ class Solution:
         return estimated_time # include time at current pos
         
         
-# Optimized Sol
+# Optimized Sol (99.32%)
 a = None
 from math import ceil
 def solve(x, h):
