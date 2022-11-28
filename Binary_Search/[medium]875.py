@@ -1,4 +1,4 @@
-# 875. Koko Eating Bananas
+# 875. Koko Eating Bananas (78.74%)
 # 1
 class Solution:
     def minEatingSpeed(self, piles: list[int], h: int) -> int:
@@ -52,10 +52,30 @@ class Solution:
         return estimated_time # include time at current pos
         
         
-            
+# Optimized Sol
+a = None
+from math import ceil
+def solve(x, h):
+    # print([ceil(i/x) for i in a], h)
+    return sum([ceil(i/x) for i in a]) <= h
+
+class Solution:
+    def minEatingSpeed(self, piles: list[int], h: int) -> int:
+        global a
+        a = piles
+        l = 1
+        r = max(a)
+        mid = (l + r) // 2
+        while l < r:
+            if solve(mid,h):
+                r = mid
+            else:
+                l = mid + 1
+            mid = (l + r) // 2
+        return mid
         
 
-# optimized sol
+# LeetCode Sol
 import math
 class Solution:
     def minEatingSpeed(self, piles: list[int], h: int) -> int:  
@@ -83,6 +103,8 @@ class Solution:
         # Once the left and right boundaries coincide, we find the target value,
         # that is, the minimum workable eating speed.
         return right
+
+
 # [30,11,23,4,20]
 # [4,11,20,23,30]
 # total = 88
