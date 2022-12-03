@@ -1,6 +1,6 @@
 # 1011. Capacity To Ship Packages Within D Days (86.84%)
 
-# Link:
+# Link of Optimized possibleCap() --- seem so:
 # https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/discuss/256729/JavaC%2B%2BPython-Binary-Search
 # optimized
 class Solution:
