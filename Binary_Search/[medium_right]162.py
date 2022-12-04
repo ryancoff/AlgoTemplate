@@ -4,6 +4,39 @@ Good Guidline:
 https://leetcode.com/problems/find-peak-element/discuss/1290642/Intuition-behind-conditions-or-Complete-Explanation-or-Diagram-or-Binary-Search
 
 """
+# Optimized one (98.98%)
+class Solution:
+    def findPeakElement(self, nums: list[int]) -> int:
+        length = len(nums)
+        if length == 1:
+            return 0
+        
+        left, right = 0, length-1
+        
+        while left < right:
+            mid = left + (right-left)//2
+            # 1 2 3 4 5 2 1
+            if nums[mid] < nums[mid+1]: #1
+                left = mid + 1
+            # elif mid == 0 and nums[mid] < nums[mid+1]: #1
+            #     left = mid + 1
+            # elif mid == 0 and nums[mid] > nums[mid+1]: #2 #left=mid=0 --> return left
+            #     return mid
+            # elif nums[mid-1] < nums[mid] and mid == length - 1: # left=mid=right=length-1 --> return left
+            #     return mid
+            # elif nums[mid-1] < nums[mid] and nums[mid] < nums[mid+1]: #1
+            #     left = mid + 1
+            elif nums[mid-1] < nums[mid] and nums[mid] > nums[mid+1]: # left=right --> return left
+                return mid
+            # elif nums[mid-1] > nums[mid] and mid == length - 1: # 2
+            #     right = mid
+            # elif nums[mid-1] > nums[mid] and nums[mid] > nums[mid+1]: # 2
+            #     right = mid
+            else: # > < #2
+                right = mid
+        
+        return left
+
 class Solution:
     def findPeakElement(self, nums: list[int]) -> int:
         length = len(nums)
