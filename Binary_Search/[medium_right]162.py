@@ -1,4 +1,9 @@
 # 162. Find Peak Element (99.79%)
+"""
+Good Guidline:
+https://leetcode.com/problems/find-peak-element/discuss/1290642/Intuition-behind-conditions-or-Complete-Explanation-or-Diagram-or-Binary-Search
+
+"""
 class Solution:
     def findPeakElement(self, nums: list[int]) -> int:
         length = len(nums)
