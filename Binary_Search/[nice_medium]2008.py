@@ -1,7 +1,7 @@
 #2008. Maximum Earnings From Taxi (%70.59)
 
 """
-Releated Question: 1235
+Releated Question: #1235 question -- Reversed Total DP list/array 
 """
 
 # Optimized
@@ -20,10 +20,9 @@ class Solution:
             
         return dp[0]
 
-# Best Yeid (A+1)---> (?) Yeid (A) 
-# Cool Yeil (B)---> (?) Yeid (A)
-
-# Best Yied (A+1) > Cool (B+A) ---> Best Yield (A+1)=(A)
+# [1,2,1],[1,3,100]
+# dp: [102], [102]
+# binary search ---> dp[0] -redirect to --> dp[1]
 
 
 # Z--> A
