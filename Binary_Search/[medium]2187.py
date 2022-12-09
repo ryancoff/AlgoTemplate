@@ -1,5 +1,21 @@
-# 2187. Minimum Time to Complete Trips
+# 2187. Minimum Time to Complete Trips (99.81%)
 
+# Cleaner
+class Solution:
+    def minimumTime(self, time: List[int], totalTrips: int) -> int:
+        lo, hi = 0, min(time)*totalTrips
+        
+        while lo < hi:
+            m = (lo+hi)//2
+            trips = sum([m//t for t in time])
+            if trips >= totalTrips:
+                hi = m
+            else:
+                lo = m + 1
+
+            
+        return hi
+# 1
 class Solution:
     def minimumTime(self, time: List[int], totalTrips: int) -> int:
         min_t = min(time) # Might no need
