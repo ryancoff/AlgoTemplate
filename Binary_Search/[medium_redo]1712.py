@@ -39,7 +39,7 @@ class Solution:
 
             # idx_left = bisect.bisect_left(prefix_sums[lo+1:], lowerBound) # >= lowerBound
             # idx_right = bisect.bisect_right(prefix_sums[lo+1:], upperBound) - 1  # [:idx_right] <= upperBound
-            # F**g Slow??
+            # F**g Slow?? TLE due to rebalance middle of search space
 
             # idx_left = bisect.bisect_left(prefix_sums, lowerBound) # >= lowerBound
             # idx_right = bisect.bisect_right(prefix_sums, upperBound) - 1  # [:idx_right] <= upperBound
