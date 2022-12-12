@@ -1,6 +1,6 @@
 # 2271. Maximum White Tiles Covered by a Carpet (89.30%)
 
-# Two pointer (98.52%)
+# Fast-slow pointers (96.68%)
 class Solution:
     def maximumWhiteTiles(self, tiles: List[List[int]], carpetLen: int) -> int:
         tiles.sort()
