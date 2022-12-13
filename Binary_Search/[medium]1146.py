@@ -1,5 +1,7 @@
 # 1146. Snapshot Array ()
-
+"""
+Releated-Id: 911
+"""
 # Binary Search (python 93%)
 # [snap_id, val]
 class SnapshotArray(object):
