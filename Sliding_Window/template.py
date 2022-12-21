@@ -16,4 +16,12 @@ for j in range(N):
   ans = max(ans, j-i+1) # +1 to include A[j]
 
 # return ans
-  
+
+for j in range(N):
+  # CODE: use A[j] to update state which might make the window invalid
+  if invalid(A,j,i):
+    # When INVALID, keep shrinking the left edge 'i' until it's valid again
+    i += 1
+    # Update state using A[i] # 
+
+# return j - i + 1
